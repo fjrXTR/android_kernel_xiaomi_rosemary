@@ -1146,6 +1146,7 @@ static const struct arm64_cpu_capabilities arm64_features[] = {
 		.min_field_value = 1,
 	},
 #endif
+#ifndef CONFIG_MTK_IGNORE_SSBS
 #ifdef CONFIG_ARM64_SSBD
 	{
 		.desc = "Speculative Store Bypassing Safe (SSBS)",
@@ -1158,6 +1159,7 @@ static const struct arm64_cpu_capabilities arm64_features[] = {
 		.min_field_value = ID_AA64PFR1_SSBS_PSTATE_ONLY,
 		.cpu_enable = cpu_enable_ssbs,
 	},
+#endif
 #endif
 	{},
 };
