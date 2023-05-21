@@ -65,6 +65,12 @@ int notrace unwind_frame(struct stackframe *frame)
 	frame->pc = *(unsigned long *)(fp - 4);
 #endif
 
+	if (ALIGN(frame->fp, THREAD_SIZE) != ALIGN(fp, THREAD_SIZE))
+		return -EINVAL;
+
+	if (ALIGN(frame->sp, THREAD_SIZE) != ALIGN(low, THREAD_SIZE))
+		return -EINVAL;
+
 	return 0;
 }
 #endif
