@@ -34,8 +34,8 @@ function zupload()
 git clone --depth=1 https://github.com/fjrXTR/AnyKernel3.git AnyKernel
 cp out/arch/arm64/boot/Image.gz-dtb AnyKernel
 cd AnyKernel
-zip -r9 liquid-Maika-kernel-v1.2-rosemary.zip *
-curl -T liquid-Maika-kernel-v1.2-rosemary.zip temp.sh
+zip -r9 liquid-Maika-kernel-v1.3-rosemary.zip *
+curl -T liquid-Maika-kernel-v1.3-rosemary.zip temp.sh
 }
 
 compile
